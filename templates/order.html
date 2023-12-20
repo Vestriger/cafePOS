@@ -1,0 +1,36 @@
+{% if products|length == 0 %}
+<div class="order_empty">
+    <span>Выберите блюдо</span>
+</div>
+{% else %}
+<div class="order_filled">
+    <div class="order_top">
+        <div class="order_top_text"><span>Заказ № {{ sell_number }}</span></div>
+        <div class="order_positions">
+            {% for product, product_info in products.items %}
+            <div class="order_position">
+                <div class="order_position_right">
+                    <span>{{ product_info.value }}</span>
+                </div>
+                <span>{{ product }}</span>
+                <div class="order_position_right">
+                    <span class="order_position_price">{{ product_info.price }} Р</span>
+                    <a class="order_position_cancel" data-product-id="{{ product_info.id }}">x</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="order_bottom">
+        <div class="order_bottom_text">
+            <span>
+            {{ total }} Р
+            </span>
+        </div>
+        <form id="order_button" action="/pay/" method="post">
+            <input type="hidden" name="order" id="orderInput" value="">
+            <input type="submit" value="Оплатить заказ">
+        </form>
+    </div>
+ </div>
+{% endif %}

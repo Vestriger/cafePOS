@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="categories">
+    <ul>
+        {% for category in categories %}
+            <li>
+                <a href="{{ category.get_absolute_url }}" class="category_ref"></a>
+                <div class="category_item">
+                    <span class="category_item_text">{{ category.name }}</span>
+                </div>
+                <a href="/delete_category/{{ category.id }}/" class="category_delete">x</a>
+            </li>
+        {% endfor %}
+        <li id="category_item_new">
+            <div class="category_item">
+                <span id="add-category-button">Добавить</span>
+                <div id="add-category-form-container" style="display: none;">
+                    <form id="add-category-form">
+                        <input type="text" id="new-category-name" placeholder="Название" required>
+                        <button type="submit" style="font-size: 24px;">Добавить</button>
+                    </form>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <div id="add-product-form" style="display: none"></div>
+</div>
+{% endblock %}

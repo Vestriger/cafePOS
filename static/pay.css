@@ -1,0 +1,139 @@
+body{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-attachment: fixed;
+    overflow: hidden;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 36px;
+    align-items: center;
+    background-color: #5477F7
+}
+
+header{
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 15px;
+}
+
+.return{
+    width: 10%;
+}
+
+.pay_img{
+    height: 95%;
+    width: 10%;
+}
+
+img{
+    width: auto;
+    height: 70%;
+    margin-top:20px;
+}
+
+header a{
+    text-decoration: none;
+    color:white;
+    border-radius: 50%;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10vh;
+    border: 2px solid white;
+    cursor: pointer;
+}
+
+header a:hover{
+    background-color: #6182f8
+}
+
+section a{
+    color: #000000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+header h1{
+    color:white;
+}
+
+.pay_variants{
+    border-radius: 15px;
+    height: 60%;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    padding: 13px;
+    background-color:rgb(212, 212, 212);
+}
+
+.pay_variants_buttons{
+    border-radius: 15px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+
+section{
+    width: 100%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+}
+
+.pay_variant{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 100%;
+    border-radius: 15px;
+    align-items: center;
+    height: 100%;
+    position: relative;
+    justify-content: center;
+}
+
+.pay_variant:hover{
+    background-color:rgb(238, 238, 238);
+}
+
+.pay_ref{
+    display: block;
+    width: 100%;
+    position:absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+button{
+    all:unset;
+}
+
+.payment_success{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.payment_success a{
+    background-color: #5278F7;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 15px;
+    margin-top: 10px;
+
+}

@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'pay.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Payment</title>
+</head>
+<body>
+    <header>
+        <div class="return"></div>
+        <h1>К оплате {{ total }} рублей</h1>
+        <div class="return">
+            <a href="/">Назад</a>
+        </div>
+    </header>
+    <section>
+        <form method="post" class="pay_variants">
+            <input type="hidden" id="order" value="{{ order }}">
+            <div class="pay_variant" style="margin-right: 15px">
+                <span>Наличные</span>
+                <img src="{% static 'img/cash.png' %}" alt="Cash">
+                <button name="payment_type" value="cash" class="pay_ref"></button>
+            </div>
+            <div class="pay_variant">
+                <span>Безналичные</span>
+                <img src="{% static 'img/card.png' %}" alt="Card">
+                <button name="payment_type" value="card" class="pay_ref"></button>
+            </div>
+        </form>
+    </section>
+</body>
+</html>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    $(document).ready(function () {
+        var order = JSON.parse($('#order').val())
+        console.log(order)
+        function sendOrder(payment_type) {
+            $.ajax({
+                url: '/process_payment/',
+                type: 'POST',
+                data: {'order': JSON.stringify(order), 'payment_type': payment_type},
+                success: function (response) {
+                    $('.pay_variants').html(response.success_html);
+                }
+            });
+        }
+
+        $('.pay_variants').on('submit', function (event) {
+            event.preventDefault();
+        });
+
+        $('.pay_ref').on('click', function (event) {
+            event.preventDefault();
+            var payment_type = $(this).val();
+            sendOrder(payment_type)
+        });
+    });
+</script>

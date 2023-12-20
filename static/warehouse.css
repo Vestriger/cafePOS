@@ -1,0 +1,169 @@
+body{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-attachment: fixed;
+    overflow: hidden;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 30px;
+    background-color: #5477F7
+}
+
+header{
+    width: 100%;
+    background-color: #fff;
+    height: 10%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 15px;
+}
+
+.logo_img{
+    height: 95%;
+    width: 10%;
+}
+
+img{
+    width: auto;
+    height: 100%
+}
+
+a{
+    color: #000000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+header li{
+    text-decoration: none;
+    background-color: #dde1f1;
+    padding: 25px 35px;
+    font-weight: 500;
+    margin: 0 20px;
+    border-radius: 25px;
+    position: relative;
+}
+
+header li:hover{
+    background-color: #c9cfe7;
+}
+
+.nav_item_text{
+    color:#000000;
+}
+
+#shift_open{
+    background-color: rgb(152, 255, 183);
+}
+
+#shift_open:hover{
+    background-color: rgb(133, 235, 164);
+}
+
+.category_ref{
+    display: block;
+    width: 100%;
+    position:absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+header ul{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+}
+
+section{
+    height: 87%;
+    margin: 7px 0;
+    display: flex;
+}
+
+#worker_name{
+    margin: 0 10px;
+}
+
+span{
+    font-weight: 500;
+    color: #809DC9;
+}
+
+section{
+    height: 88.5%;
+    border-radius: 15px;
+    margin: 7px 0;
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    overflow-y: auto;
+}
+
+.warehouse{
+    width: 30%;
+    margin: 30px;
+}
+
+.warehouse_products{
+    width: 100%;
+    display: flex;
+    margin-bottom: 30px;
+    flex-direction: column;
+}
+
+.warehouse_product_item{
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    height: 8vh;
+    margin-bottom: 15px;
+}
+
+.warehouse_product_item_right{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    text-align: center;
+}
+
+.warehouse_product_item_input{
+    all: unset;
+    background-color: #5477F7;
+    border-radius: 15px;
+    color:white;
+    padding: 10px 5px;
+    text-align: center;
+}
+
+.warehouse_product_item_submit{
+    font-weight: 500;
+    color: #809DC9;
+}
+
+.warehouse_product_item_submit:hover{
+    color: #6185bb;
+}
+
+section::-webkit-scrollbar {
+    width: 10px;
+
+  }
+
+section::-webkit-scrollbar-track {
+    background: #ffffff;
+
+  }
+
+section::-webkit-scrollbar-thumb {
+    background: #809DC9;
+    border-radius: 25px;
+  }
+
+section::-webkit-scrollbar-thumb:hover {
+    background: #88a4ff;
+  }

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="categories">
+    <ul>
+        {% for product in products %}
+        <li class="product_li">
+            <div class="product_item" data-product-id="{{ product.id }}">
+                <div class="product_shor_title">
+                    <h1>{{ product.sliced }}</h1>
+                </div>
+                <span class="products_item_text">{{product.name}}</span>
+                <span class="products_item_text" style="font-size: 30px;">{{ product.price }} рублей</span>
+                <a href="/delete_product/{{ slug }}/{{ product.id }}/" class="product_delete"  data-product-id="{{ product.id }}">x</a>
+            </div>
+        </li>
+        {% endfor %}
+        <li id="category_item_new" style="background-color: #c6d8f5">
+            <div class="product_item">
+                <span id="add-category-button">Добавить</span>
+                <div id="add-category-form-container" style="display: none;">
+                    <form id="add-product-form" data-category-slug="{{ slug }}">
+                        <input type="text" id="new-product-name" placeholder="Название" required>
+                        <input type="text" id="new-product-price" placeholder="Цена" required>
+                        <button type="submit" style="font-size: 24px;">Добавить</button>
+                    </form>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <div id="add-category-form" style="display: none"></div>
+</div>
+{% endblock %}

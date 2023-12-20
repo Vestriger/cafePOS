@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'base.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>Cafe Management System</title>
+</head>
+<body>
+    <header>
+        <a href="/" class="logo_img"><div class="logo_img"><img src="{% static 'img/logo.png' %}" alt="CMS"></div></a>
+        <span>Работник:</span>
+        <span id="worker_name" data-worker-id="3">Павел</span>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/warehouse/" class="category_ref"></a>
+                    <div class="nav_item">
+                        <span class="nav_item_text">Склад</span>
+                    </div>
+                </li>
+                <li>
+                    <a href="/report/" class="category_ref"></a>
+                    <div class="nav_item">
+                        <span class="nav_item_text">Отчёт</span>
+                    </div>
+                </li>
+{#                <li id="shift_open">#}
+{#                    <a href="#" class="category_ref"></a>#}
+{#                    <div class="nav_item">#}
+{#                        <span class="nav_item_text">Открыть смену</span>#}
+{#                    </div>#}
+{#                </li>#}
+            </ul>
+        </nav>
+    </header>
+    <section>
+        {% block content %}
+        {% endblock %}
+        <div class="order"></div>
+    </section>
+</body>
+</html>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="{% static 'base.js' %}"></script>
